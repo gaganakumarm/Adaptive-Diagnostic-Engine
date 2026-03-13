@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Diagnostic Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Landing Page -->
+        <div id="landing-page" class="page">
+            <header>
+                <h1>Adaptive Diagnostic Engine</h1>
+                <p>AI-Powered GRE-Style Assessment</p>
+            </header>
+            
+            <main>
+                <section class="intro">
+                    <h2>Welcome to Your Personalized Diagnostic Test</h2>
+                    <p>Our adaptive testing system will evaluate your ability level through 10 carefully selected questions that adjust to your performance in real-time.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <h3>🎯 Adaptive Difficulty</h3>
+                            <p>Questions adjust to your ability level</p>
+                        </div>
+                        <div class="feature">
+                            <h3>📊 Real-time Analytics</h3>
+                            <p>Track your ability progression</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🤖 AI Insights</h3>
+                            <p>Get personalized learning recommendations</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <button id="start-test-btn" class="primary-btn">Start Diagnostic Test</button>
+            </main>
+        </div>
+
+        <!-- Quiz Interface -->
+        <div id="quiz-page" class="page hidden">
+            <header>
+                <h1>Adaptive Diagnostic Test</h1>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="stats">
+                    <span>Question: <span id="question-number">1</span>/10</span>
+                    <span>Current Ability: <span id="current-ability">0.50</span></span>
+                </div>
+            </header>
+            
+            <main>
+                <div id="question-container">
+                    <div id="question-text"></div>
+                    <div id="options-container" class="options"></div>
+                    <button id="submit-answer-btn" class="primary-btn" disabled>Submit Answer</button>
+                </div>
+                
+                <div id="feedback-container" class="hidden">
+                    <div id="feedback-message"></div>
+                    <button id="next-question-btn" class="primary-btn">Next Question</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results-page" class="page hidden">
+            <header>
+                <h1>Diagnostic Complete!</h1>
+            </header>
+            
+            <main>
+                <section class="summary">
+                    <div class="metric">
+                        <h3>Final Ability Score</h3>
+                        <div class="score" id="final-ability">0.50</div>
+                    </div>
+                    <div class="metric">
+                        <h3>Accuracy</h3>
+                        <div class="score" id="accuracy">0%</div>
+                    </div>
+                    <div class="metric">
+                        <h3>Questions Answered</h3>
+                        <div class="score" id="total-answered">0/10</div>
+                    </div>
+                </section>
+                
+                <section class="ai-insights">
+                    <h3>AI Diagnostic Report</h3>
+                    <div id="diagnostic-report" class="markdown-content"></div>
+                </section>
+                
+                <section class="actions">
+                    <button id="restart-btn" class="primary-btn">Take New Test</button>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
