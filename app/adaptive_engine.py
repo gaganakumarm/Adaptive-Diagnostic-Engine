@@ -127,13 +127,14 @@ class AdaptiveEngine:
         # Find unanswered questions
         unanswered_questions = list(self.questions_collection.find())
         print(f"Total questions available: {len(unanswered_questions)}")
-        print(f"Answered questions (cleaned): {answered_questions_clean}")
         
         # Clean up answered questions list - ensure all IDs are strings
         answered_questions_clean = set()
         for q_id in answered_questions:
             if q_id:
                 answered_questions_clean.add(str(q_id))
+        
+        print(f"Answered questions (cleaned): {answered_questions_clean}")
         
         # Filter out answered questions - check both id and _id fields
         unanswered_questions = [q for q in unanswered_questions 
