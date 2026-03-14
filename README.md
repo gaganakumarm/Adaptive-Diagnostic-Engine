@@ -5,7 +5,11 @@
 A sophisticated GRE-style assessment system that dynamically adjusts question difficulty in real-time. By leveraging **Item Response Theory (IRT)** and **LLM-driven analytics**, the engine provides a mathematically grounded evaluation of student proficiency followed by a personalized pedagogical roadmap.
 
 ---
+## System Architecture
 
+For detailed system architecture, see [SystemArchitecture.md](SystemArchitecture.md).
+
+---
 ## System Overview
 
 This prototype replaces static testing with a dynamic feedback loop. As a student interacts with the system, their latent ability ($\theta$) is recalculated after every response, ensuring the questions served are always at the "Goldilocks zone" of their current skill level.
